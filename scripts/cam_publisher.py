@@ -8,7 +8,7 @@ from cv_bridge import CvBridge, CvBridgeError
 
 class image_converter:
     def __init__(self):
-        rospy.init_node('image_converter', anonymous=True)
+        rospy.init_node('camera_node', anonymous=True)
         self.camera = cv2.VideoCapture(0)
         self.ret, self.frame = self.camera.read()
         self.image_pub = rospy.Publisher("camera_image",Image, queue_size=10)
