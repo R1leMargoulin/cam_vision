@@ -21,7 +21,8 @@ class image_converter:
         while not rospy.is_shutdown():
             ret, frame = self.camera.read()
             crop = frame[0:frame.shape[0], int(frame.shape[1]/2):frame.shape[1]]
-            self.publish(crop)
+            reduced = cv2.resize(crop, (0, 0), fx = 0.1, fy = 0.1)
+            self.publish(reduced)
             self.rate.sleep()
 
 
