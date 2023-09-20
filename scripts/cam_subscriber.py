@@ -16,7 +16,7 @@ class image_converter:
   def callback(self,data):
     try:
       cv_image = self.bridge.imgmsg_to_cv2(data, "passthrough")
-      print(cv_image.shape)
+      #print(cv_image.shape)
     except CvBridgeError as e:
       print(e)
 
@@ -25,7 +25,7 @@ class image_converter:
     #   cv2.circle(cv_image, (50,50), 10, 255)
 
     cv2.imshow("Remote Video", cv_image)
-    cv2.waitKey(3)
+    cv2.waitKey(1)
 
 
 def main(args):

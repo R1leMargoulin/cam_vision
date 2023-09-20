@@ -5,6 +5,7 @@ import cv2
 from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
+import time
 
 class image_converter:
     def __init__(self):
@@ -19,10 +20,15 @@ class image_converter:
     
     def run(self):
         while not rospy.is_shutdown():
+            #test = time.time()
             ret, frame = self.camera.read()
-            crop = frame[0:frame.shape[0], int(frame.shape[1]/2):frame.shape[1]]
-            reduced = cv2.resize(crop, (0, 0), fx = 0.1, fy = 0.1)
-            self.publish(reduced)
+            #measuretest = time.time()-test
+            
+            #crop = frame[0:frame.shape[0], int(frame.shape[1]/2):frame.shape[1]]
+            #resized = cv2.resize(frame,(0,0), fx=0.5, fy=0.5)
+            self.publish(frame)
+            
+            #print(measuretest)
             self.rate.sleep()
 
 
