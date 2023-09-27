@@ -1,3 +1,15 @@
 {
-    "ros.distro": "humble"
+    "ros.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/r1/ros2_ws/install/ul_omnibot/local/lib/python3.10/dist-packages",
+        "/home/r1/ros2_ws/install/omni_sim/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/r1/ros2_ws/install/ul_omnibot/local/lib/python3.10/dist-packages",
+        "/home/r1/ros2_ws/install/omni_sim/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
 }
