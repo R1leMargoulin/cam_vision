@@ -8,8 +8,10 @@ import cv2
 class image_converter(Node):
     def __init__(self):
         super().__init__('camera_sub_display')
+        self.declare_parameter("cam_number", 0)
+        num_camera = self.get_parameter('cam_number').get_parameter_value().integer_value
         self.bridge = CvBridge()
-        self.subscription = self.create_subscription(Image, 'camera_image', self.callback, 10)
+        self.subscription = self.create_subscription(Image, 'camera_image'+str(num_camera), self.callback, 10)
         self.subscription
 
   
