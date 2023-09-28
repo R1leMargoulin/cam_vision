@@ -10,9 +10,10 @@ import time
 class image_converter:
     def __init__(self):
         rospy.init_node('camera_node', anonymous=True)
-        self.camera = cv2.VideoCapture(0)
+        num_camera = rospy.get_param("cam_number", 0)
+        self.camera = cv2.VideoCapture(num_camera)
         #self.ret, self.frame = self.camera.read()
-        self.image_pub = rospy.Publisher("camera_image",Image, queue_size=10)
+        self.image_pub = rospy.Publisher("camera_image"+str(num_camera),Image, queue_size=10)
         self.bridge = CvBridge()
         self.rate = rospy.Rate(50)
 

@@ -10,6 +10,7 @@ class image_converter:
 
   def __init__(self):
     rospy.init_node('camera_sub_display', anonymous=True)
+    
     self.bridge = CvBridge()
     self.image_sub = rospy.Subscriber("camera_image",Image,self.callback)
 
