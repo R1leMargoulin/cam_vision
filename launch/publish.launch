@@ -1,0 +1,8 @@
+<launch>
+        <arg name="cam_number" default="0" />
+
+        <node pkg="cam_vision" type="cam_publisher.py" name="cam_pub">
+            <param name="cam_number" value="$(arg camera)" />
+        </node>
+
+</launch>
