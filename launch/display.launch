@@ -1,7 +1,7 @@
 <launch>
         <arg name="camera" default="0" />
 
-        <node pkg="cam_vision" type="cam_subscriber.py.py" name="cam_sub" output="screen">
+        <node pkg="cam_vision" type="cam_subscriber.py.py" name="cam_sub$(arg camera)" output="screen">
             <param name="cam_number" type="int" value="$(arg camera)"/>
         </node>
 
