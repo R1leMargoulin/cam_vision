@@ -27,9 +27,9 @@ class image_converter:
             ret, frame = self.camera.read()
             #measuretest = time.time()-test
             
-            crop = frame[0:frame.shape[0], int(frame.shape[1]/2):frame.shape[1]]
+            #crop = frame[0:frame.shape[0], int(frame.shape[1]/2):frame.shape[1]]
             #resized = cv2.resize(frame,(0,0), fx=0.5, fy=0.5)
-            self.publish(crop)
+            self.publish(frame)
             
             #print(measuretest)
             self.rate.sleep()
